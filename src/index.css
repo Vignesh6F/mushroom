@@ -19,6 +19,7 @@
   body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background: var(--forest);
     color: var(--cream);
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -198,14 +199,24 @@ footer input {
   }
 }
 
+/* ============================================================
+   Hero Section — fully responsive, no fixed pixel offsets
+   ============================================================ */
 .hero-section {
-  min-height: 548px;
-  padding: 86px 5vw 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 560px;
+  padding: 80px 5vw 40px;
   background:
     radial-gradient(ellipse at 50% 56%, rgba(72, 86, 57, .55) 0%, rgba(26, 37, 26, .8) 34%, transparent 69%),
     linear-gradient(180deg, #0d140e 0%, #0c120d 100%);
   color: var(--cream);
   isolation: isolate;
+  overflow: hidden;
 }
 
 .hero-section::before {
@@ -231,20 +242,28 @@ footer input {
 .hero-glow {
   position: absolute;
   z-index: -1;
-  width: 660px;
-  height: 450px;
+  width: min(660px, 80vw);
+  height: min(450px, 50vw);
   left: 50%;
-  top: 16%;
+  top: 30%;
   transform: translateX(-50%);
   border-radius: 50%;
   background: rgba(161, 163, 117, .13);
   filter: blur(90px);
   pointer-events: none;
+  animation: glowBreath 6s ease-in-out infinite;
+}
+
+@keyframes glowBreath {
+  0%, 100% { opacity: .8; transform: translateX(-50%) scale(.96); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
 }
 
 .hero-intro {
   position: relative;
+  z-index: 2;
   text-align: center;
+  width: 100%;
 }
 
 .hero-brand {
@@ -272,7 +291,7 @@ footer input {
   z-index: 1;
   margin: 8px auto 0;
   color: #f3eedc;
-  font: 700 clamp(40px, 6.4vw, 76px)/.96 Georgia, 'Times New Roman', serif;
+  font: 700 clamp(32px, 6.4vw, 76px)/.96 Georgia, 'Times New Roman', serif;
   letter-spacing: -.055em;
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.432),
@@ -288,47 +307,55 @@ footer input {
   text-shadow: 0 2px 5px rgba(0, 0, 0, .95), 0 0 16px rgba(0, 0, 0, .9);
 }
 
-.hero-glow {
-  animation: glowBreath 6s ease-in-out infinite;
-}
-
-@keyframes glowBreath {
-  0%, 100% { opacity: .8; transform: translateX(-50%) scale(.96); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
-}
-
+/* Side copy columns — hidden on small screens, visible on large */
 .hero-copy {
-  position: absolute;
-  z-index: 2;
-  top: 285px;
-  width: min(220px, 23vw);
-  color: #e2dfd0;
-  font-size: 14px;
-  line-height: 1.48;
-  pointer-events: none;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, .85);
+  display: none;
 }
 
-.hero-copy-left {
-  left: max(7vw, calc((100% - 1080px) / 2));
-  text-align: right;
-}
-
+.hero-copy-left,
 .hero-copy-right {
-  right: max(7vw, calc((100% - 1080px) / 2));
+  display: none;
 }
 
+@media (min-width: 1024px) {
+  .hero-copy {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(200px, 16vw);
+    color: #e2dfd0;
+    font-size: 13px;
+    line-height: 1.48;
+    pointer-events: none;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .85);
+  }
+
+  .hero-copy-left {
+    display: block;
+    left: max(5vw, calc((100% - 1080px) / 2));
+    text-align: right;
+    transform: translateY(-50%);
+  }
+
+  .hero-copy-right {
+    display: block;
+    right: max(5vw, calc((100% - 1080px) / 2));
+    transform: translateY(-50%);
+  }
+}
+
+/* CTA buttons — flow naturally below the h1 */
 .hero-actions {
-  position: absolute;
+  position: relative;
   z-index: 4;
-  top: 444px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  width: max-content;
+  margin-top: clamp(20px, 3vh, 36px);
+  width: 100%;
   max-width: 94vw;
 }
 
@@ -553,32 +580,17 @@ footer input {
 
 @media (max-width: 700px) {
   .hero-section {
-    min-height: 680px;
-    padding: 90px 18px 24px;
+    height: 100svh;
+    min-height: 560px;
+    padding: 76px 18px 32px;
   }
 
   .hero-intro h1 {
-    font-size: clamp(34px, 8.8vw, 58px);
+    font-size: clamp(28px, 8.8vw, 52px);
     white-space: normal;
   }
 
-  .hero-copy {
-    top: 515px;
-    width: 44%;
-    font-size: 11px;
-    text-align: center;
-  }
-
-  .hero-copy-left {
-    left: 4%;
-  }
-
-  .hero-copy-right {
-    right: 4%;
-  }
-
   .hero-actions {
-    top: 595px;
     gap: 7px;
   }
 
