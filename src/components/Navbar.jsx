@@ -79,7 +79,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-3">
+        <nav className="hidden lg:flex items-center gap-2">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -88,10 +88,10 @@ export default function Navbar() {
                 href={`#${item.id}`}
                 onClick={(e) => handleNavClick(e, item.id)}
                 aria-current={isActive ? 'location' : undefined}
-                className={`transition-colors text-[12px] whitespace-nowrap ${
+                className={`desktop-nav-link text-[12px] whitespace-nowrap ${
                   isActive
-                    ? "text-primary font-semibold relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-0.5 after:bg-primary"
-                    : "text-on-surface-variant hover:text-primary font-normal"
+                    ? 'font-semibold'
+                    : 'font-normal'
                 }`}
               >
                 {item.label}
@@ -119,7 +119,7 @@ export default function Navbar() {
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden w-9 h-9 rounded-full bg-white/80 border border-outline-variant flex items-center justify-center text-primary"
+            className="lg:hidden w-9 h-9 rounded-full bg-white/80 border border-outline-variant flex items-center justify-center text-primary"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -129,13 +129,14 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#FAF4ED] border-b border-outline-variant px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="mobile-nav-drawer lg:hidden border-b px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={(e) => handleNavClick(e, item.id)}
+                aria-current={activeSection === item.id ? 'location' : undefined}
                 className={`py-2 px-3 rounded-xl text-base font-medium transition-colors ${
                   activeSection === item.id
                     ? 'bg-secondary-container text-secondary font-semibold'
