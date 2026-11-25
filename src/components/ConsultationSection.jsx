@@ -2,9 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { User, Phone, Mail, CalendarDays, Users, MessageSquare, Send, CheckCircle2, ChevronDown } from 'lucide-react';
 import { fadeInUp, staggerContainer, staggerItem, viewport } from '../utils/animations';
-
-// WhatsApp number from env — set VITE_OWNER_WHATSAPP_NUMBER in your .env file
-const WA_NUMBER = (import.meta.env.VITE_OWNER_WHATSAPP_NUMBER || '91').replace(/\D/g, '');
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const trainingOptions = [
   'Oyster & Milky Mushroom Cultivation',
@@ -82,7 +80,7 @@ export default function ConsultationSection() {
     setErrors({});
 
     const message = buildWhatsAppMessage(form);
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+    const url = getWhatsAppUrl(message);
     window.open(url, '_blank', 'noopener,noreferrer');
 
     submittedName.current = form.name;
@@ -278,7 +276,7 @@ export default function ConsultationSection() {
               <h3 className="consult-info-title">Quick Contact</h3>
               <p className="consult-contact-label">Prefer to reach us directly?</p>
               <a
-                href="https://wa.me/91?text=I%27d%20like%20to%20enquire%20about%20a%20consultation"
+                href={getWhatsAppUrl("I'd like to enquire about a consultation")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="consult-wa-btn"

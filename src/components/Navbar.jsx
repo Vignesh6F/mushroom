@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const navItems = [
   { label: 'Home',                   id: 'home' },
-  { label: 'Infrastructure',         id: 'experience' },
   { label: 'Cultivation',            id: 'process' },
+  { label: 'Infrastructure',         id: 'experience' },
   { label: 'Marketing',              id: 'collection' },
   { label: 'Trainings',              id: 'available-trainings' },
   { label: 'About Us',               id: 'about-us' },
@@ -106,7 +107,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           {/* WhatsApp button */}
           <a
-            href="https://wa.me/91"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"

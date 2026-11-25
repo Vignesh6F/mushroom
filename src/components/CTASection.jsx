@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, ChefHat, FlaskConical, MessageCircle, Recycle } from 'lucide-react';
 import MushroomIcon from './MushroomIcon';
 import { fadeInUp, staggerContainer, staggerItem, viewport } from '../utils/animations';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const trainings = [
   { title: 'Oyster & Milky Mushroom Cultivation', icon: MushroomIcon, num: '01' },
@@ -76,7 +77,7 @@ export default function CTASection() {
           variants={fadeInUp}
         >
           <a
-            href="https://wa.me/91?text=I%27m%20interested%20in%20mushroom%20training"
+            href={getWhatsAppUrl("I'm interested in mushroom training")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white transition-all hover:-translate-y-1"

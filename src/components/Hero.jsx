@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 import MushroomIcon from './MushroomIcon';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 export default function Hero() {
   const scrollToContent = () => {
@@ -77,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.48 }}
         >
           <a
-            href="https://wa.me/91?text=I%27m%20interested%20in%20mushroom%20training"
+            href={getWhatsAppUrl("I'm interested in mushroom training")}
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn hero-btn-primary"
