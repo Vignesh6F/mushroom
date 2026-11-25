@@ -16,7 +16,6 @@ export default function Hero() {
         className="hero-video"
         autoPlay
         muted
-        loop
         playsInline
         preload="auto"
         aria-hidden="true"
