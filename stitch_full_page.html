@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{
+  "surface":"#F5EDE2",
+  "background":"#F5EDE2",
+  "surface-bright":"#FAF4ED",
+  "surface-container-lowest":"#FFFFFF",
+  "surface-container-low":"#FAF4ED",
+  "surface-container":"#F2E7D9",
+  "surface-container-high":"#EAE0CF",
+  "surface-container-highest":"#E2D5C3",
+  "surface-dim":"#D9CBB7",
+  "primary":"#1D1E18",
+  "primary-container":"#2D4229",
+  "on-primary":"#FFFFFF",
+  "on-primary-container":"#D1E6BF",
+  "secondary":"#475C3E",
+  "secondary-container":"#E2EBDA",
+  "on-secondary-container":"#263B22",
+  "tertiary":"#1B2E18",
+  "tertiary-container":"#1F331A",
+  "on-surface":"#1D1E18",
+  "on-surface-variant":"#4A4C42",
+  "outline":"#828577",
+  "outline-variant":"#DFD7CB",
+  "forest-dark":"#1C2A1A",
+  "forest-card":"#243821",
+  "accent-sage":"#7E8D6B",
+  "accent-olive":"#566A4B"
+},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-lg":"1.75rem","space-md":"1rem","space-sm":"0.5rem","space-xl":"3rem","gutter-mobile":"1rem","gutter":"1.5rem","space-xs":"0.25rem","margin":"3rem","margin-mobile":"1.25rem"},fontFamily:{"headline-sm":["Playfair Display"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"display-lg":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"500"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"500"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-[#F5EDE2]/90 backdrop-blur-xl border-b border-outline-variant/50 shadow-sm transition-all duration-300"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><a class="flex items-center gap-2.5 group focus:outline-none" data-path="farm" href="#"><span class="flex items-center justify-center w-9 h-9 rounded-full bg-secondary-container text-secondary transition-transform group-hover:scale-105"><span class="material-symbols-outlined text-[20px]">potted_plant</span></span><span class="font-headline-sm text-headline-sm text-primary tracking-tight">UrbanMycelium</span></a><nav class="hidden xl:flex items-center gap-7" data-active-classes="text-primary font-semibold relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-0.5 after:bg-primary"><a aria-current="page" class="transition-colors text-primary font-semibold relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-0.5 after:bg-primary" data-path="farm" href="#">Farm</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="varieties" href="#">Varieties</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="growing-process" href="#">Growing Process</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="experience" href="#">Experience</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="why-us" href="#">Why Us</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="journal" href="#">Journal</a></nav><div class="flex items-center gap-3.5"><a class="flex items-center gap-2.5 bg-[#2D4229] text-white pl-4 pr-3 py-2 rounded-full shadow-md hover:bg-[#20311D] transition-all focus:outline-none" data-path="shop-harvest" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="font-label-md text-label-md tracking-wider uppercase font-semibold">Shop Harvest</span><span class="flex items-center justify-center w-5 h-5 rounded-full bg-[#E2EBDA] text-[#263B22] font-label-sm text-label-sm font-bold">3</span></a><div class="w-8 h-8 rounded-full bg-[#2D4229] flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-white text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- ========================================================================= -->
+<!-- 1. HERO SECTION                                                          -->
+<!-- ========================================================================= -->
+<section class="relative w-full min-h-[942px] flex items-center bg-[#F5EDE2] overflow-hidden pt-8 pb-16 lg:py-20">
+<!-- Ambient Botanical Backing Elements -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary-container/50 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 right-1/4 w-[32rem] h-[32rem] rounded-full bg-[#EAE0CF]/70 blur-[100px] pointer-events-none"></div>
+<!-- Hero Content Overlay Container -->
+<div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Column: Editorial & Actions -->
+<div class="lg:col-span-7 flex flex-col gap-6 max-w-2xl">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#EAE0CF]/80 border border-outline-variant text-[#2D4229] w-fit shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#475C3E] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#475C3E]"></span>
+</span>
+<span class="font-label-md text-label-md tracking-wider uppercase font-semibold text-[#1D1E18]">Sustainably Harvested in Pacific Northwest • Zero Synthetics</span>
+</div>
+<!-- Headline -->
+<h1 class="font-display-lg text-display-lg text-[#1D1E18] tracking-tight text-balance leading-none">
+          Grow Nature.<br/>
+<span class="italic font-normal text-[#475C3E]">Harvest Fresh.</span>
+</h1>
+<!-- Supporting Text -->
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-xl">
+          Discover the ancient craft and precise biotechnology of mushroom cultivation. Experience fresh, organic mushrooms grown sustainably in your own space, nurtured by recirculating air and pure botanical substrates.
+        </p>
+<!-- Dual CTA Row -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#2D4229] text-white font-label-lg text-label-lg shadow-md hover:shadow-lg hover:bg-[#20311D] transition-all duration-300 transform hover:-translate-y-0.5" href="#collection">
+<span>Shop Growing Kits</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/80 border border-outline-variant text-[#1D1E18] font-label-lg text-label-lg backdrop-blur-md shadow-sm hover:bg-white transition-all" href="#process">
+<span class="material-symbols-outlined text-[#475C3E] text-[20px]">play_circle</span>
+<span>Watch How It Works</span>
+</a>
+</div>
+<!-- Live Metrics Strip -->
+<div class="grid grid-cols-3 gap-4 pt-6 max-w-lg">
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/90 border border-outline-variant shadow-sm backdrop-blur-sm">
+<div class="flex items-center gap-1.5 text-[#475C3E]">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Flush Time</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#1D1E18] leading-tight">48-Hour</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Harvest cycle</span>
+</div>
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/90 border border-outline-variant shadow-sm backdrop-blur-sm">
+<div class="flex items-center gap-1.5 text-[#475C3E]">
+<span class="material-symbols-outlined text-[16px]">compost</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Substrate</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#1D1E18] leading-tight">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Organic hardwood</span>
+</div>
+<div class="flex flex-col gap-1 p-4 rounded-2xl bg-white/90 border border-outline-variant shadow-sm backdrop-blur-sm">
+<div class="flex items-center gap-1.5 text-[#475C3E]">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Culinary</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[#1D1E18] leading-tight">Michelin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kitchen standard</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive 3D Mushroom Scene Container -->
+<div class="lg:col-span-5 w-full h-[620px] relative flex flex-col items-center justify-center">
+<div class="w-full h-full relative rounded-3xl overflow-hidden flex items-center justify-center">
+
+</div>
+<div class="absolute bottom-4 z-20 pointer-events-auto">
+<div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/95 border border-outline-variant backdrop-blur-md shadow-md text-[#1D1E18]">
+<span class="material-symbols-outlined text-[#475C3E] animate-pulse text-[20px]">3d_rotation</span>
+<span class="font-label-md text-label-md text-[#1D1E18] font-medium">Drag or move cursor to observe live blooming tall red mushroom cluster &amp; spore release</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 2. ABOUT OUR FARM                                                         -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#FAF4ED] relative border-y border-outline-variant/60">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">Agrarian Stewardship &amp; Science</span>
+<h2 class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight">Rooted in Nature, Grown with Purpose.</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          UrbanMycelium rethinks urban agriculture. We synthesize micro-climate biotechnology with ancient symbiotic fungi physiology.
+        </p>
+</div>
+<!-- 4 Core Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1 -->
+<div class="group p-8 rounded-2xl bg-white border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">forest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Sustainable Mushroom Cultivation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Grown strictly on upcycled agricultural hardwood sawdust, regional oat husks, and closed-loop reclaimed misting.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between text-[#475C3E] border-t border-outline-variant/40">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Zero Forest Waste</span>
+<span class="material-symbols-outlined text-[18px]">nature</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="group p-8 rounded-2xl bg-white border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">sanitizer</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Fresh &amp; Chemical-Free</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Cultivated in pristine sterile rooms with 0% synthetic pesticides, no heavy metals, and certified hospital-grade HEPA filters.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between text-[#475C3E] border-t border-outline-variant/40">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Lab Purity Tested</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="group p-8 rounded-2xl bg-white border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">thermostat</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Controlled Environments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Hyper-monitored atmospheric cells regulating 94% humidity balance, fine ultrasonic mist, and custom circadian spectrums.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between text-[#475C3E] border-t border-outline-variant/40">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Dynamic Microclimate</span>
+<span class="material-symbols-outlined text-[18px]">air</span>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="group p-8 rounded-2xl bg-white border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Dawn-Picked Freshness</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Harvested by hand at peak sporulation every morning and transferred cold directly to culinary stations within 24 hours.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center justify-between text-[#475C3E] border-t border-outline-variant/40">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Doorstep in 24h</span>
+<span class="material-symbols-outlined text-[18px]">pace</span>
+</div>
+</div>
+</div>
+<!-- Editorial Quote Showcase Block -->
+<div class="w-full p-8 lg:p-12 rounded-3xl bg-[#F2E7D9] border border-outline-variant flex flex-col lg:flex-row items-center gap-8 relative overflow-hidden shadow-sm">
+<div class="w-full lg:w-1/3 h-64 lg:h-80 rounded-2xl overflow-hidden relative shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photography of delicate Lion's Mane mushroom spines glistening under warm botanical laboratory lights in an organic indoor nursery, earth tones, warm cream and deep forest green aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxnIA9kJH_zVAVzcmI6xn_jlSuu8gFSkLzOtx365J4IxCRBgIiDmRirnz-LnzqI1b28GxLvht4Av5EHo15KX8o_nqh3zCbq1ABmyoWLdVoa9Z9cMeucLNmsHeulfYd_A3bGVuB3xgsX66yi9TOxKmf2LC3Y3XDlM8Mp3MjaK56c4hUr8ObRCq-M8TgILJQ6lonbu1KtpkweyMOjDqhOvZHKQ2md8dZoasAZaIuvjVt"/>
+</div>
+<div class="w-full lg:w-2/3 flex flex-col gap-6">
+<span class="material-symbols-outlined text-[#475C3E] text-5xl">format_quote</span>
+<blockquote class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight leading-snug">
+            “Mycelium isn't just an organism; it is the living connective tissue of natural renewal, whispering secrets of resilience from the damp forest floor.”
+          </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#2D4229] text-white flex items-center justify-center font-headline-sm">
+              EA
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-[#1D1E18] font-bold">Dr. Elena Ashford</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Founder &amp; Principal Mycological Cultivator</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. MUSHROOM COLLECTION                                                    -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#F5EDE2] relative" id="collection">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Collection Header & Filter Pills -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">Our Living Archive</span>
+<h2 class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight">Explore Our Mushroom Varieties</h2>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center flex-wrap gap-2 p-1.5 rounded-full bg-[#EAE0CF] border border-outline-variant">
+<button class="px-5 py-2 rounded-full bg-[#2D4229] text-white font-label-md text-label-md transition-all shadow-sm">All Harvests</button>
+<button class="px-5 py-2 rounded-full text-on-surface-variant hover:text-[#1D1E18] font-label-md text-label-md transition-all">Gourmet Culinary</button>
+<button class="px-5 py-2 rounded-full text-on-surface-variant hover:text-[#1D1E18] font-label-md text-label-md transition-all">Medicinal &amp; Nootropic</button>
+<button class="px-5 py-2 rounded-full text-on-surface-variant hover:text-[#1D1E18] font-label-md text-label-md transition-all">Grow Kits</button>
+</div>
+</div>
+<!-- 6 Variety Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Oyster Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pristine cluster of Pearl Oyster Mushrooms Pleurotus ostreatus growing on damp wood grain, velvety grey and pale ivory fan caps, ultra realistic fine culinary photography with soft warm background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59h8e1vq7bKiSnK3vufwbkw29mKOOgxw46ZP7W7acrUaL_MUdZEHMW50s1-GNhPbbL60mbrHW8yTa3py3W_70oxzilkmUvVxkXCtn1myNv8KEnh42c2q7FGkazONnBNS9p2L2lS6lSMBPz3WGU2ZegX1QZkY3Lzs9snkVgDCI5xiRsdi-QyH_W4AUP92C8KR0DgINZH1pzL65a_gvNS9flnbASULaPA3aFGdpI6Tr"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#475C3E] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> In Season
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Culinary Staple
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Oyster Mushrooms</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Pleurotus ostreatus</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Delicate, velvety texture with a subtle anise sweetness and silky finish when braised or pan-seared in butter.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Pink Oyster Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant tropical Pink Oyster Mushrooms Pleurotus djamor with intense coral pink gills and sculptural fluted caps in a clean modern indoor hydroponic mist chamber, warm botanical daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZXf-kQJmWlYXfvrg1oho0t8zpPLMzs6J3qWNN-Q97e_hXR9Q-bK3dRzfcWI_Z6BYixyA4Yhfy5XLc50tnpLt8l3jeNISN0ZDoYYTJIAwIudLmz5qW1DDYHi4hvRrOkpAD7hRNtIS_cN8ajDkRJ94inlzbRj8uwo5dEZOLfsPj5iK3lRthuoKhoIly1cw1cdl5pEz8e3PVbR5lFtaxK18VSwdMjKum_gzHWp_1bmyo"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#1D1E18] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> Limited Flush
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Exotic Reserve
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Pink Oyster</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Pleurotus djamor</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$24</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Striking coral coloration that crisps into savory, bacon-like notes. A favorite of plant-forward gourmet menus.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Lion's Mane Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fluffy snow-white Lion's Mane mushroom Hericium erinaceus cascading waterfall icicle spines on an aged natural wood block, high-end fine art botanical photography, soft warm highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAXG-60biBURMDA7u__hoEXnVvTZ7nJopU8Tf5zSqmRhhTmD8h5YfP9TvQJEevYl8d6TyvG4xuWf6obskntXMEm8jsQsyERnMEeBoksCpYDqeNOmPQTuxj1zgnuaYmqorWe25-4lM6wEi4oU3hiXLKsSkgVQKgoNkooUN0RG6_lp6AWrYpTrHb-t-MrWSpRsFMwW463cL-pgZY2JE7aKoK8UxeDMB06ili2kAfzLG5"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#475C3E] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> Fresh Harvest
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Nootropic Power
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Lion's Mane</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Hericium erinaceus</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$32</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Succulent seafood-like tender texture reminiscent of lobster or crab, celebrated globally for cognitive focus.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Shiitake Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Robust brown-capped Shiitake mushrooms Lentinula edodes with beautiful white cracked pattern caps resting on a dark slate board, culinary composition with warm soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nfIWFItFdfu0UJWQ1RFRryg86EfByDYAcswDUZx2K4milJMN8rL4sgpehT8Nw6MgSh_AEtr-285fyy3HBO4OeXcCy3GwVuj-oijeOtaDmCyyI7GEsfxAx342VC2VeazmHyfRMTv9eu3GLAv5d5aROcG-J1hL-i1Zg9Oj_7PHp9nfeAL3lOwLQNelN2iwtDrm2HAKA0SP8xOClPLRMBacrEh4xCOhJRom3VUvCNV4"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#475C3E] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> In Season
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Oak-Aged
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Shiitake Reserve</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Lentinula edodes</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$22</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Deep, smoky umami richness nurtured over dense oak sawdust blocks. Essential for deep broths and roasted dishes.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Milky Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Calocybe indica milky mushrooms pure chalk white plump fleshy caps and thick sturdy stems resting on organic moss bed, pristine laboratory agricultural photography, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChiN-OiCrTnMHt_U4CntIw6xJRP6tfGheNiuiGufZApGW8no2dx-ZwKM7MoZtTkqFzSP_JzN-tbZMw9w5WlCWJaQo6cb0ZAmwqOM1W0FlcmtZu1-fnD2ojukZ8ny01nT0ap_xqTirG4Ryeaob0Zjz0I7ycoYr81HWYrbOc0mO4ig16w6axnwf3gRVhs7ARnoCPMXyBNq5hdC_r9DULU7Cw78UNgO4KqYQ0wye3LLmm"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#475C3E] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> Reserve
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Long Shelf Life
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Milky Mushrooms</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Calocybe indica</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$20</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Plump, silky-firm flesh with extended longevity. Holds its dense structure through high-temperature stir-fries.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Card 6: King Oyster Mushrooms -->
+<div class="group rounded-3xl bg-white p-5 border border-outline-variant shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 rounded-2xl overflow-hidden bg-surface-container mb-5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sculptural King Oyster Mushrooms Pleurotus eryngii with thick muscular white stems and small smooth tan caps, styled in a minimalist culinary kitchen setting on a linen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoIEUFmoPQKIJg6vW1RZmsgHE6_aC8nd9TOqyQyCPt1OK9lHg0DFZ-4gJzw_jy-OK-Q9u-QtgBZfdT1kiYB030E9L-nC6g0sg5alllxERHyoa5bAJ6_UN_nLG76Ymvccs_V69IgJvbdGlkTIWywy9V0LTsZkwlfxKbvw0Z0-5rN5KFE0eS4dnQsyGSUbSiHazGnyfx10xnG_GCtDcAcfBLqfw6d-wEhZ1w58J8LG4j"/>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-outline-variant text-[#475C3E] font-label-sm text-label-sm font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span> In Season
+            </div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#2D4229] text-white font-label-sm text-label-sm">
+              Chef Favorite
+            </div>
+</div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">King Oyster</h3>
+<p class="font-body-sm text-body-sm italic text-[#475C3E]">Pleurotus eryngii</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-[#1D1E18]">$26</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/kg</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+            Stout, meaty stems that slice effortlessly into rounds for pan-crisped vegan "scallops" or hearty slow-cooked roasts.
+          </p>
+<div class="mt-auto flex items-center gap-2 pt-4 border-t border-outline-variant">
+<button class="flex-1 py-2.5 rounded-full bg-[#F5EDE2] hover:bg-[#EAE0CF] text-[#1D1E18] font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-[#2D4229] hover:bg-[#20311D] text-white flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. THE GROWING PROCESS (Dark Container / Forest Green)                    -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#1C2A1A] text-[#FAF4ED] relative overflow-hidden" id="process">
+<!-- Atmospheric green mist gradients -->
+<div class="absolute top-0 right-0 w-[40rem] h-[40rem] rounded-full bg-[#243821]/50 blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] rounded-full bg-[#2D4229]/40 blur-[100px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-20 relative z-10">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md text-[#D1E6BF] uppercase tracking-widest block mb-2 font-semibold">Biological Precision</span>
+<h2 class="font-headline-lg text-headline-lg text-[#FAF4ED] tracking-tight">From Spore to Harvest</h2>
+</div>
+<p class="font-body-lg text-body-lg text-[#FAF4ED]/80 max-w-md">
+          A four-stage lifecycle orchestrated to mimic prime understory seasonal conditions through dynamic climate control.
+        </p>
+</div>
+<!-- Process 4-Stage Timeline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+<!-- Stage 01 -->
+<div class="flex flex-col gap-5 p-6 rounded-3xl bg-[#243821] border border-white/10 shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#D1E6BF]/50 font-serif">01</span>
+<div class="px-3 py-1 rounded-full bg-white/10 text-[#D1E6BF] font-label-sm text-label-sm">
+              65% RH • 121°C
+            </div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#FAF4ED] mb-2">Substrate Preparation</h3>
+<p class="font-body-md text-body-md text-[#FAF4ED]/75">
+              Locally sourced hardwood sawdust and wheat bran are hydrated to exact moisture ratios and autoclave-sterilized.
+            </p>
+</div>
+<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-[#D1E6BF] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">science</span>
+<span>Sterile Autoclave Phase</span>
+</div>
+</div>
+<!-- Stage 02 -->
+<div class="flex flex-col gap-5 p-6 rounded-3xl bg-[#243821] border border-white/10 shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#D1E6BF]/50 font-serif">02</span>
+<div class="px-3 py-1 rounded-full bg-white/10 text-[#D1E6BF] font-label-sm text-label-sm">
+              ISO-5 • 22°C
+            </div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#FAF4ED] mb-2">Clean Inoculation</h3>
+<p class="font-body-md text-body-md text-[#FAF4ED]/75">
+              Liquid master culture is introduced to cooled substrate bags within laminar flow hoods to safeguard genetic vitality.
+            </p>
+</div>
+<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-[#D1E6BF] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">biotech</span>
+<span>Laminar Flow Air Curtain</span>
+</div>
+</div>
+<!-- Stage 03 -->
+<div class="flex flex-col gap-5 p-6 rounded-3xl bg-[#243821] border border-white/10 shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#D1E6BF]/50 font-serif">03</span>
+<div class="px-3 py-1 rounded-full bg-white/10 text-[#D1E6BF] font-label-sm text-label-sm">
+              Darkness • 24°C
+            </div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#FAF4ED] mb-2">Mycelial Incubation</h3>
+<p class="font-body-md text-body-md text-[#FAF4ED]/75">
+              In sensory-dark chambers, fine hyphal threads weave through the matrix, consuming lignocellulose and establishing vigor.
+            </p>
+</div>
+<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-[#D1E6BF] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+<span>Hyphal Colonization</span>
+</div>
+</div>
+<!-- Stage 04 -->
+<div class="flex flex-col gap-5 p-6 rounded-3xl bg-[#243821] border border-white/10 shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-display-lg text-display-lg text-[#D1E6BF]/50 font-serif">04</span>
+<div class="px-3 py-1 rounded-full bg-white/10 text-[#D1E6BF] font-label-sm text-label-sm">
+              94% RH • 16°C
+            </div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-[#FAF4ED] mb-2">Fruiting &amp; Harvest</h3>
+<p class="font-body-md text-body-md text-[#FAF4ED]/75">
+              Fresh air exchanges and ultrasonic humidity trigger robust mushroom pinheads that mature into prime caps in 48 hours.
+            </p>
+</div>
+<div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-[#D1E6BF] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">cut</span>
+<span>Hand-Trimmed at Dawn</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Telemetry Bar -->
+<div class="p-6 rounded-2xl bg-[#243821] border border-white/15 flex flex-wrap items-center justify-between gap-6 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-[#D1E6BF] animate-ping"></span>
+<span class="font-label-lg text-label-lg font-semibold tracking-wide text-white">Live Fruiting Vault Status: Chamber Alpha-7</span>
+</div>
+<div class="flex flex-wrap items-center gap-6 font-body-sm text-body-sm text-[#D1E6BF]">
+<div><span class="text-white font-bold">CO2:</span> 780 PPM (Optimal)</div>
+<div><span class="text-white font-bold">RH:</span> 94.2% (Ultrasonic Mist active)</div>
+<div><span class="text-white font-bold">TEMP:</span> 16.8°C</div>
+<div><span class="text-white font-bold">SPECTRUM:</span> 6500K Dusk Emulation</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. OUR FARM EXPERIENCE                                                    -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#FAF4ED] relative border-b border-outline-variant/60">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<!-- Section Title -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">Bio-Architectural Cultivation</span>
+<h2 class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight">The Modern Mycological Chamber</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          A blend of natural biology and hyper-clean precision farming. Our modular chambers consume 90% less water than traditional field farms.
+        </p>
+</div>
+<!-- Immersive Grid / Visual Tour -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Big Feature Visual -->
+<div class="lg:col-span-8 rounded-3xl overflow-hidden relative min-h-[420px] shadow-md border border-outline-variant flex flex-col justify-end p-8">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Interior of an ultra-modern indoor mushroom vertical farm, shelves stacked with organic substrate blocks covered in blooming white Lion's mane and blue oyster mushrooms, illuminated by soft green and warm diffused LED grow lights, mist rolling between shelves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIp2hsET9TeVwUfgJMzH_9X4kl6Zaah2WynHfGmXl4kXS0v37Mi_ja7vTKj5vmT8MQaLADYCbdF8-BXtjvPeU8NzGms4m6wbsVQyqCD6609Tufwr_3Ha9DAq3oByWL1yztwe2pepBybgxqzE3sq6ASek1nnbPWC08kMvPMsySo_pQcf8RCzO3aejMZSBK5-QsNAIPkHM_fYssq0MMbMjAibUVLmfNcnKVFiw90CFBv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1C2A1A]/90 via-[#1C2A1A]/35 to-transparent"></div>
+<div class="relative z-10 flex flex-col gap-2 text-white max-w-lg">
+<span class="px-3 py-1 rounded-full bg-[#E2EBDA] text-[#263B22] font-label-sm text-label-sm w-fit font-bold uppercase tracking-wider">Vertical Ecology</span>
+<h3 class="font-headline-lg text-headline-lg text-white">Closed-Loop Ultrasonic Misting</h3>
+<p class="font-body-md text-body-md text-[#FAF4ED]/90">
+              Each chamber recycles condensation via reverse osmosis, generating sub-micron droplet fogs that feed fungal respiration without water pooling.
+            </p>
+</div>
+</div>
+<!-- Right Side Micro Telemetry Cards -->
+<div class="lg:col-span-4 flex flex-col gap-6 justify-between">
+<!-- Telemetry 1 -->
+<div class="p-6 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between text-[#475C3E]">
+<span class="material-symbols-outlined text-[24px]">scale</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Annual Yield</span>
+</div>
+<div class="font-display-lg text-display-lg text-[#1D1E18] font-bold">14,000<span class="text-[#475C3E] text-headline-lg font-normal">+ kg</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Annual harvested volume across specialty culinary and medicinal strains.</p>
+</div>
+<!-- Telemetry 2 -->
+<div class="p-6 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between text-[#475C3E]">
+<span class="material-symbols-outlined text-[24px]">recycling</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Zero Footprint</span>
+</div>
+<div class="font-display-lg text-display-lg text-[#1D1E18] font-bold">0%<span class="text-[#475C3E] text-headline-lg font-normal"> Waste</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Spent substrate blocks return directly to local urban soils as nutrient-dense organic compost.</p>
+</div>
+<!-- Telemetry 3 -->
+<div class="p-6 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between text-[#475C3E]">
+<span class="material-symbols-outlined text-[24px]">skillet</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Gastronomy</span>
+</div>
+<div class="font-display-lg text-display-lg text-[#1D1E18] font-bold">42+<span class="text-[#475C3E] text-headline-lg font-normal"> Kitchens</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Partnered culinary programs relying on weekly bespoke harvest schedules.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 6. WHY CHOOSE US?                                                         -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#F5EDE2] relative">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-4">
+<span class="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest font-semibold">The UrbanMycelium Distinction</span>
+<h2 class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight">Why Our Fungi Elevate Culinary Standards</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          We combine biological integrity with exacting laboratory standards to deliver mushrooms of unparalleled texture and density.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="flex flex-col items-start gap-4 p-8 rounded-3xl bg-white border border-outline-variant hover:border-[#828577] transition-all duration-300 shadow-sm">
+<div class="w-14 h-14 rounded-2xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229]">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">100% Natural Cultivation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            No forced growth stimulants, no synthetic foliar sprays. Only pure water, natural hardwoods, and clean mountain spore lines.
+          </p>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col items-start gap-4 p-8 rounded-3xl bg-white border border-outline-variant hover:border-[#828577] transition-all duration-300 shadow-sm">
+<div class="w-14 h-14 rounded-2xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229]">
+<span class="material-symbols-outlined text-[28px]">agriculture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Fresh Farm Harvest</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Shipped cold packed immediately after daybreak clipping. Arrives crisp with intact veils and resilient moisture levels.
+          </p>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col items-start gap-4 p-8 rounded-3xl bg-white border border-outline-variant hover:border-[#828577] transition-all duration-300 shadow-sm">
+<div class="w-14 h-14 rounded-2xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229]">
+<span class="material-symbols-outlined text-[28px]">all_inclusive</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">Closed-Loop Farming</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Our growing blocks are made of upcycled timber mill surplus, and every kilogram of post-flush substrate enriches local community soils.
+          </p>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col items-start gap-4 p-8 rounded-3xl bg-white border border-outline-variant hover:border-[#828577] transition-all duration-300 shadow-sm">
+<div class="w-14 h-14 rounded-2xl bg-[#E2EBDA] flex items-center justify-center text-[#2D4229]">
+<span class="material-symbols-outlined text-[28px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-[#1D1E18]">ISO Lab Production</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Monitored under cleanroom protocols to ensure every specimen is free from foreign bacterial contaminants and mold spores.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 7. TESTIMONIALS                                                           -->
+<!-- ========================================================================= -->
+<section class="w-full py-24 bg-[#FAF4ED] relative border-t border-outline-variant/60">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">Verified Voices</span>
+<h2 class="font-headline-lg text-headline-lg text-[#1D1E18] tracking-tight">Loved by Nature Enthusiasts &amp; Chefs</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center text-[#475C3E]">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<span class="font-label-md text-label-md text-[#1D1E18] font-bold">4.98 / 5.0 from 350+ orders</span>
+</div>
+</div>
+<!-- Testimonial Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1: Michelin Chef -->
+<div class="p-8 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center text-[#475C3E]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-[#1D1E18] italic">
+              “The density and moisture balance in UrbanMycelium's King Oysters is unparalleled. They don't leak water into the pan—they sear to a golden caramel crisp immediately.”
+            </p>
+</div>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] font-bold font-headline-sm">
+              JC
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-[#1D1E18] font-bold">Chef Julian Cruz</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Executive Chef, L'Ombre (2 Michelin Stars)</p>
+</div>
+</div>
+</div>
+<!-- Review 2: Clinical Herbalist -->
+<div class="p-8 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center text-[#475C3E]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-[#1D1E18] italic">
+              “Finding authentic, unadulterated Lion's Mane with bioactive potency intact is rare. UrbanMycelium delivers medicinal mushroom flushes of true pristine quality.”
+            </p>
+</div>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] font-bold font-headline-sm">
+              MN
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-[#1D1E18] font-bold">Mira Nakamura</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Clinical Mycotherapist &amp; Author</p>
+</div>
+</div>
+</div>
+<!-- Review 3: Home Cultivator -->
+<div class="p-8 rounded-3xl bg-white border border-outline-variant shadow-sm flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center text-[#475C3E]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-[#1D1E18] italic">
+              “Their countertop grow kits are works of bio-art. We harvested three full flushes of pink oyster mushrooms right beside our kitchen herb garden.”
+            </p>
+</div>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-[#E2EBDA] flex items-center justify-center text-[#2D4229] font-bold font-headline-sm">
+              AL
+            </div>
+<div>
+<p class="font-label-lg text-label-lg text-[#1D1E18] font-bold">Arthur Sterling</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Home Cultivator, Portland</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 8. FINAL IMMERSIVE CTA                                                    -->
+<!-- ========================================================================= -->
+<section class="w-full py-28 bg-[#1C2A1A] relative overflow-hidden">
+<!-- Atmospheric depth lighting -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[50rem] h-[25rem] rounded-full bg-[#243821]/60 blur-[130px] pointer-events-none"></div>
+<div class="max-w-5xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center gap-8 relative z-10">
+<!-- Overline Tag -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[#D1E6BF]">
+<span class="material-symbols-outlined text-[16px]">potted_plant</span>
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Direct From Our Chambers</span>
+</div>
+<!-- Main Heading -->
+<h2 class="font-display-lg text-display-lg text-[#FAF4ED] tracking-tight max-w-3xl">
+        Bring the Freshness of Nature Home.
+      </h2>
+<!-- Description -->
+<p class="font-body-lg text-body-lg text-[#FAF4ED]/85 max-w-2xl leading-relaxed">
+        Experience premium organic mushrooms cultivated with reverence for the ecosystem and delivered fresh from our cleanroom vaults to your kitchen within hours of harvest.
+      </p>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-center gap-5 pt-4">
+<a class="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-[#FAF4ED] text-[#1D1E18] font-label-lg text-label-lg shadow-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5" href="#collection">
+<span>Shop Growing Kits</span>
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</a>
+<a class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/20 text-[#FAF4ED] hover:bg-white/10 font-label-lg text-label-lg transition-colors" href="#guide">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download Cultivation Guide (PDF)</span>
+</a>
+</div>
+<!-- Trust signals -->
+<div class="pt-8 flex flex-wrap items-center justify-center gap-8 text-[#FAF4ED]/60 font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#D1E6BF]">check_circle</span>
+          Guaranteed Fresh Delivery
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#D1E6BF]">check_circle</span>
+          Zero Plastic Packaging
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#D1E6BF]">check_circle</span>
+          Carbon-Neutral Cold Chain
+        </span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-[#FAF4ED] text-[#1D1E18] pt-space-xl pb-margin border-t border-outline-variant"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg mb-space-xl"><div class="lg:col-span-4 flex flex-col gap-4"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[#475C3E] text-[22px]">eco</span><span class="font-headline-sm text-headline-sm text-[#1D1E18]">UrbanMycelium</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Pioneering bio-architectural indoor cultivation. We cultivate Michelin-grade organic fungi through low-impact biotechnology and precision climatic misting chambers.</p><div class="flex items-center gap-3 pt-2"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-outline-variant text-[#475C3E] font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span>100% Organic</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-outline-variant text-[#475C3E] font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#475C3E]"></span>Zero Emission</span></div></div><div class="lg:col-span-2 flex flex-col gap-3"><h4 class="font-label-lg text-label-lg text-[#1D1E18] uppercase tracking-wider font-semibold">Mushroom Varieties</h4><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Lion's Mane Supreme</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Black Pearl King Oyster</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Blue Morel Reserve</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Golden Enoki Clustered</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Cordyceps Militaris</li></ul></div><div class="lg:col-span-2 flex flex-col gap-3"><h4 class="font-label-lg text-label-lg text-[#1D1E18] uppercase tracking-wider font-semibold">Cultivation</h4><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Substrate Ecology</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Hyper-Pure Air Filtration</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Circadian Misting</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Culinary Standards</li><li class="hover:text-[#1D1E18] transition-colors cursor-pointer">Farm Visits &amp; Tours</li></ul></div><div class="lg:col-span-4 flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-[#1D1E18] uppercase tracking-wider font-semibold">Cultivator Dispatch</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Receive weekly fruiting schedules, private reserve drops, and culinary mycological essays.</p><form class="flex items-center gap-2 bg-white border border-outline-variant p-1.5 rounded-full shadow-sm"><input class="bg-transparent pl-4 pr-2 py-1.5 w-full font-body-sm text-body-sm text-[#1D1E18] placeholder:text-outline focus:outline-none" placeholder="Enter your email address" type="email"/><button class="px-5 py-2 rounded-full bg-[#2D4229] text-white font-label-md text-label-md hover:bg-[#20311D] transition-colors whitespace-nowrap" type="button">Join</button></form></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/60"><p>© 2025 UrbanMycelium Inc. All rights reserved. Regenerative bio-agriculture.</p><div class="flex items-center gap-6"><a class="hover:text-[#1D1E18] transition-colors" href="#">Ethical Sourcing</a><a class="hover:text-[#1D1E18] transition-colors" href="#">Privacy Policy</a><a class="hover:text-[#1D1E18] transition-colors" href="#">Terms of Cultivation</a></div></div></div></footer></body></html>
