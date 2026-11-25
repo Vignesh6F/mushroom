@@ -6,53 +6,56 @@ import { fadeInUp, staggerContainer, staggerItem, viewport } from '../utils/anim
 
 const milestones = [
   {
-    year: '17 January 2007',
-    title: 'Udhayan begins',
-    description: 'Udhayan Mushroom Cultivation Farm began in Kadachanenthal, Madurai, Tamil Nadu.',
+    year: '17 Jan 2007',
+    title: 'Udhayan Begins',
+    description: 'Udhayan Mushroom Cultivation Farm was established in Kadachanenthal, Madurai, Tamil Nadu.',
     icon: CalendarDays,
   },
   {
-    year: 'Early production',
-    title: 'Commercial oyster mushrooms',
-    description: 'The farm initially focused on commercial oyster mushroom cultivation.',
+    year: 'Early Production',
+    title: 'Commercial Oyster Mushrooms',
+    description: 'The farm initially focused on commercial oyster mushroom cultivation for the market.',
     icon: MushroomIcon,
   },
   {
-    year: 'As markets changed',
-    title: 'Milky mushroom production',
-    description: 'Production later focused on milky mushrooms in response to market requirements.',
+    year: 'Market Shift',
+    title: 'Milky Mushroom Production',
+    description: 'Production transitioned to milky mushrooms in response to growing market demand.',
     icon: MapPin,
   },
   {
     year: '2013',
-    title: 'Experience shared through training',
-    description: 'After gaining production and cultivation experience, the farm began training people interested in mushroom cultivation.',
+    title: 'Training Begins',
+    description: 'After gaining extensive cultivation experience, the farm started sharing knowledge through training.',
     icon: Users,
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section id="about-us" className="w-full py-24 bg-[#F5EDE2] relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+    <section id="about-us">
+      <div className="section-wrap">
+
+        {/* Centred header */}
         <motion.div
-          className="max-w-3xl"
+          className="section-header"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeInUp}
         >
-          <span className="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest font-semibold">
-            About Udhayan
-          </span>
-          <h2 className="mt-3 font-headline-lg text-3xl sm:text-4xl text-[#1D1E18] tracking-tight font-serif font-bold">
-            Cultivating mushrooms and sharing experience since 2007.
+          <span className="section-eyebrow">About Udhayan</span>
+          <h2 className="section-heading">
+            Cultivating Mushrooms &amp; Sharing Experience Since 2007
           </h2>
-          <p className="mt-5 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-            Based in Kadachanenthal, Madurai, Tamil Nadu, Udhayan began with commercial oyster mushroom cultivation and later focused on milky mushroom production to meet market requirements. In 2013, after gaining production and cultivation experience, we began sharing our knowledge through training.
+          <p className="section-body">
+            Based in Kadachanenthal, Madurai, Tamil Nadu, Udhayan began with commercial oyster
+            mushroom cultivation and later focused on milky mushroom production. In 2013, we
+            began sharing our knowledge through structured training programs.
           </p>
         </motion.div>
 
+        {/* Milestone cards */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           initial="hidden"
@@ -60,27 +63,43 @@ export default function WhyChooseUs() {
           viewport={viewport}
           variants={staggerContainer}
         >
-          {milestones.map(({ year, title, description, icon: Icon }) => (
+          {milestones.map(({ year, title, description, icon: Icon }, i) => (
             <motion.article
               key={title}
               variants={staggerItem}
-              className="flex flex-col gap-4 p-6 rounded-3xl bg-white border border-outline-variant shadow-sm"
+              className="card-dark flex flex-col gap-4 p-6 relative overflow-hidden"
             >
-              <div className="flex items-center justify-between text-[#475C3E]">
-                <Icon className="w-6 h-6" aria-hidden="true" />
-                <span className="font-label-sm text-label-sm uppercase tracking-wide font-semibold text-right">
+              {/* Watermark number */}
+              <span
+                className="absolute top-2 right-3 font-serif font-bold select-none pointer-events-none"
+                style={{ fontSize: 68, lineHeight: 1, color: 'var(--sage)', opacity: .07 }}
+                aria-hidden="true"
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+
+              <div
+                className="flex items-center justify-center w-11 h-11 rounded-2xl"
+                style={{ background: 'rgba(167,180,139,.12)', color: 'var(--green-soft)' }}
+              >
+                <Icon className="w-5 h-5" aria-hidden="true" />
+              </div>
+
+              <div>
+                <span className="block text-xs font-bold tracking-widest uppercase mb-1.5" style={{ color: 'var(--gold)' }}>
                   {year}
                 </span>
+                <h3 className="font-serif text-lg font-semibold mb-2" style={{ color: 'var(--cream)' }}>
+                  {title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
+                  {description}
+                </p>
               </div>
-              <h3 className="font-headline-sm text-xl text-[#1D1E18] font-serif font-semibold">
-                {title}
-              </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
-                {description}
-              </p>
             </motion.article>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

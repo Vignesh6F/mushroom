@@ -1,75 +1,65 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ChefHat, FlaskConical, Recycle } from 'lucide-react';
+import { BookOpen, ChefHat, FlaskConical, MessageCircle, Recycle } from 'lucide-react';
 import MushroomIcon from './MushroomIcon';
 import { fadeInUp, staggerContainer, staggerItem, viewport } from '../utils/animations';
 
 const trainings = [
-  {
-    title: 'Oyster and milky mushroom cultivation',
-    icon: MushroomIcon,
-  },
-  {
-    title: 'Mushroom spawn training',
-    icon: FlaskConical,
-  },
-  {
-    title: 'Mushroom culture training',
-    icon: BookOpen,
-  },
-  {
-    title: 'Compost preparation from mushroom waste',
-    icon: Recycle,
-  },
-  {
-    title: 'Mushroom value-added products training',
-    icon: ChefHat,
-  },
+  { title: 'Oyster & Milky Mushroom Cultivation', icon: MushroomIcon, num: '01' },
+  { title: 'Mushroom Spawn Training',              icon: FlaskConical,  num: '02' },
+  { title: 'Mushroom Culture Training',            icon: BookOpen,      num: '03' },
+  { title: 'Compost Preparation from Waste',       icon: Recycle,       num: '04' },
+  { title: 'Value-Added Products Training',        icon: ChefHat,       num: '05' },
 ];
 
 export default function CTASection() {
   return (
-    <section id="available-trainings" className="w-full py-24 bg-[#1C2A1A] relative overflow-hidden">
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[50rem] h-[25rem] rounded-full bg-[#243821]/60 blur-[130px] pointer-events-none" />
+    <section id="available-trainings">
+      <div className="section-wrap">
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10 relative z-10">
+        {/* Centred header */}
         <motion.div
-          className="max-w-3xl"
+          className="section-header"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeInUp}
         >
-          <span className="font-label-md text-label-md text-[#D1E6BF] uppercase tracking-widest font-semibold">
-            Available Trainings
-          </span>
-          <h2 className="mt-3 font-display-lg text-3xl sm:text-4xl text-[#FAF4ED] tracking-tight font-serif font-bold">
-            Practical mushroom training at Udhayan
-          </h2>
-          <p className="mt-4 font-body-lg text-body-lg text-[#FAF4ED]/80">
-            Training has been part of Udhayan’s work since 2013, with nearly 2,000 individual and group trainings conducted over the past 13 years. Udhayan also offers entrepreneurship training and supports projects and research work for college students.
+          <span className="section-eyebrow">Available Trainings</span>
+          <h2 className="section-heading">Practical Mushroom Training at Udhayan</h2>
+          <p className="section-body">
+            Training has been part of Udhayan's work since 2013, with nearly{' '}
+            <strong style={{ color: 'var(--gold)' }}>2,000 individual and group trainings</strong>{' '}
+            conducted over 13 years. Entrepreneurship training and college student project support
+            are also offered.
           </p>
         </motion.div>
 
+        {/* Training cards */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={staggerContainer}
         >
-          {trainings.map(({ title, icon: Icon }, index) => (
+          {trainings.map(({ title, icon: Icon, num }) => (
             <motion.article
               key={title}
               variants={staggerItem}
-              className="flex items-start gap-4 p-6 rounded-3xl bg-[#243821] border border-white/10"
+              className="card-dark flex items-start gap-4 p-6"
             >
-              <span className="flex shrink-0 items-center justify-center w-11 h-11 rounded-2xl bg-white/10 text-[#D1E6BF]">
+              <span
+                className="flex shrink-0 items-center justify-center w-12 h-12 rounded-2xl"
+                style={{ background: 'rgba(167,180,139,.12)', color: 'var(--green-soft)' }}
+              >
                 <Icon className="w-5 h-5" aria-hidden="true" />
               </span>
               <div>
-                <span className="font-label-sm text-label-sm text-[#D1E6BF]/70">TRAINING 0{index + 1}</span>
-                <h3 className="mt-1 font-headline-sm text-lg text-[#FAF4ED] font-serif font-semibold">
+                <span className="block text-xs font-bold tracking-widest uppercase mb-1.5" style={{ color: 'rgba(209,230,191,.48)' }}>
+                  Training {num}
+                </span>
+                <h3 className="font-serif text-lg font-semibold leading-snug" style={{ color: 'var(--cream)' }}>
                   {title}
                 </h3>
               </div>
@@ -77,8 +67,9 @@ export default function CTASection() {
           ))}
         </motion.div>
 
+        {/* CTA — centred */}
         <motion.div
-          className="pt-2"
+          className="flex flex-col items-center gap-4 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
@@ -88,11 +79,19 @@ export default function CTASection() {
             href="https://wa.me/91?text=I%27m%20interested%20in%20mushroom%20training"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-[#25D366] text-white font-semibold shadow-lg hover:bg-[#1DA851] transition-colors"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white transition-all hover:-translate-y-1"
+            style={{ background: '#25D366', boxShadow: '0 8px 28px rgba(37,211,102,.28)' }}
+            onMouseEnter={(e) => e.currentTarget.style.background = '#1DA851'}
+            onMouseLeave={(e) => e.currentTarget.style.background = '#25D366'}
           >
-            Enquire about training
+            <MessageCircle size={18} strokeWidth={2} />
+            Enquire about Training
           </a>
+          <p className="text-sm" style={{ color: 'var(--muted)' }}>
+            Reach us on WhatsApp — we respond promptly.
+          </p>
         </motion.div>
+
       </div>
     </section>
   );

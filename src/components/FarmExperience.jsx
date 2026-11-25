@@ -5,55 +5,34 @@ import MushroomIcon from './MushroomIcon';
 import { fadeInUp, staggerContainer, staggerItem, viewport } from '../utils/animations';
 
 const facilities = [
-  {
-    title: 'Model cultivation setup',
-    description: 'A model for practical mushroom cultivation training.',
-    icon: MushroomIcon,
-  },
-  {
-    title: 'Equipped laboratory',
-    description: 'A laboratory equipped for mushroom spawn training.',
-    icon: FlaskConical,
-  },
-  {
-    title: 'Compost unit',
-    description: 'A compost unit for training in compost preparation from mushroom waste.',
-    icon: Recycle,
-  },
-  {
-    title: 'Training kitchen',
-    description: 'A well-established kitchen for value-added mushroom product training.',
-    icon: ChefHat,
-  },
-  {
-    title: 'Spacious mini hall',
-    description: 'A space for mass training and entrepreneurship programs for college students and self-help groups.',
-    icon: Users,
-  },
+  { title: 'Model Cultivation Setup',   description: 'A fully operational model for practical mushroom cultivation training.',                                           icon: MushroomIcon },
+  { title: 'Equipped Laboratory',       description: 'A laboratory equipped for mushroom spawn production training.',                                                    icon: FlaskConical },
+  { title: 'Compost Unit',              description: 'A dedicated unit for training in compost preparation from mushroom waste.',                                        icon: Recycle      },
+  { title: 'Training Kitchen',          description: 'A well-established kitchen for value-added mushroom product training.',                                            icon: ChefHat      },
+  { title: 'Spacious Mini Hall',        description: 'A space for mass training and entrepreneurship programs for college students and self-help groups.',                icon: Users        },
 ];
 
 export default function FarmExperience() {
   return (
-    <section id="experience" className="w-full py-24 bg-[#FAF4ED] relative border-b border-outline-variant/60">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+    <section id="experience">
+      <div className="section-wrap">
+        {/* Centred header */}
         <motion.div
-          className="max-w-3xl"
+          className="section-header"
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeInUp}
         >
-          <span className="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">
-            Infrastructure
-          </span>
-          <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#1D1E18] tracking-tight font-serif font-bold">
-            Facilities for hands-on training
-          </h2>
-          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Udhayan’s training infrastructure supports cultivation, spawn, compost, and value-added product programs.
+          <span className="section-eyebrow">Infrastructure</span>
+          <h2 className="section-heading">Facilities for Hands-On Training</h2>
+          <p className="section-body">
+            Udhayan's training infrastructure supports cultivation, spawn, compost, and
+            value-added product programs under one roof.
           </p>
         </motion.div>
 
+        {/* Facility cards */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           initial="hidden"
@@ -65,18 +44,17 @@ export default function FarmExperience() {
             <motion.article
               key={title}
               variants={staggerItem}
-              className="flex items-start gap-4 p-6 rounded-3xl bg-[#151e16] border border-white/10"
+              className="card-dark flex items-start gap-4 p-6"
             >
-              <span className="flex shrink-0 items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-[#D1E6BF]">
+              <span
+                className="flex shrink-0 items-center justify-center w-12 h-12 rounded-2xl"
+                style={{ background: 'rgba(167,180,139,.12)', color: 'var(--green-soft)' }}
+              >
                 <Icon className="w-6 h-6" aria-hidden="true" />
               </span>
               <div>
-                <h3 className="font-headline-sm text-xl text-[#FAF4ED] font-serif font-semibold">
-                  {title}
-                </h3>
-                <p className="mt-2 font-body-sm text-body-sm text-[#FAF4ED]/75">
-                  {description}
-                </p>
+                <h3 className="font-serif text-lg font-semibold" style={{ color: 'var(--cream)' }}>{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>{description}</p>
               </div>
             </motion.article>
           ))}
