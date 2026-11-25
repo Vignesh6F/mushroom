@@ -34,7 +34,7 @@ const facilities = [
 
 export default function FarmExperience() {
   return (
-    <section id="experience" className="w-full py-24 bg-[#1C2A1A] text-[#FAF4ED] relative border-b border-white/10">
+    <section id="experience" className="w-full py-24 bg-[#FAF4ED] relative border-b border-outline-variant/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
         <motion.div
           className="max-w-3xl"
@@ -43,13 +43,13 @@ export default function FarmExperience() {
           viewport={viewport}
           variants={fadeInUp}
         >
-          <span className="font-label-md text-label-md text-[#D1E6BF] uppercase tracking-widest block mb-2 font-semibold">
+          <span className="font-label-md text-label-md text-[#475C3E] uppercase tracking-widest block mb-2 font-semibold">
             Infrastructure
           </span>
-          <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#FAF4ED] tracking-tight font-serif font-bold">
+          <h2 className="font-headline-lg text-3xl sm:text-4xl text-[#1D1E18] tracking-tight font-serif font-bold">
             Facilities for hands-on training
           </h2>
-          <p className="mt-4 font-body-lg text-body-lg text-[#FAF4ED]/75 max-w-2xl">
+          <p className="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
             Udhayan’s training infrastructure supports cultivation, spawn, compost, and value-added product programs.
           </p>
         </motion.div>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Menu, MessageCircle, Phone, X } from 'lucide-react';
 
 const navItems = [
-  { label: 'Infrastructure', id: 'experience' },
+  { label: 'Home', id: 'farm' },
   { label: 'Cultivation Methodology', id: 'process' },
+  { label: 'Infrastructure', id: 'experience' },
   { label: 'Marketing', id: 'collection' },
   { label: 'Available Trainings', id: 'available-trainings' },
   { label: 'About Us', id: 'about-us' },
@@ -22,7 +23,7 @@ const sectionOrder = [
 ];
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('experience');
+  const [activeSection, setActiveSection] = useState('farm');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

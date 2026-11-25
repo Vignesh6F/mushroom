@@ -19,7 +19,6 @@
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     background: var(--forest);
     color: var(--cream);
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -199,24 +198,15 @@ footer input {
   }
 }
 
-/* ============================================================
-   Hero Section — fully responsive, no fixed pixel offsets
-   ============================================================ */
 .hero-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  min-height: 560px;
-  padding: 80px 5vw 40px;
+  aspect-ratio: 16 / 8;
+  min-height: 0;
+  padding: clamp(78px, 8vw, 112px) 5vw 24px;
   background:
     radial-gradient(ellipse at 50% 56%, rgba(72, 86, 57, .55) 0%, rgba(26, 37, 26, .8) 34%, transparent 69%),
     linear-gradient(180deg, #0d140e 0%, #0c120d 100%);
   color: var(--cream);
   isolation: isolate;
-  overflow: hidden;
 }
 
 .hero-section::before {
@@ -242,28 +232,20 @@ footer input {
 .hero-glow {
   position: absolute;
   z-index: -1;
-  width: min(660px, 80vw);
-  height: min(450px, 50vw);
+  width: 660px;
+  height: 450px;
   left: 50%;
-  top: 30%;
+  top: 16%;
   transform: translateX(-50%);
   border-radius: 50%;
   background: rgba(161, 163, 117, .13);
   filter: blur(90px);
   pointer-events: none;
-  animation: glowBreath 6s ease-in-out infinite;
-}
-
-@keyframes glowBreath {
-  0%, 100% { opacity: .8; transform: translateX(-50%) scale(.96); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
 }
 
 .hero-intro {
   position: relative;
-  z-index: 2;
   text-align: center;
-  width: 100%;
 }
 
 .hero-brand {
@@ -291,7 +273,7 @@ footer input {
   z-index: 1;
   margin: 8px auto 0;
   color: #f3eedc;
-  font: 700 clamp(32px, 6.4vw, 76px)/.96 Georgia, 'Times New Roman', serif;
+  font: 700 clamp(40px, 6.4vw, 76px)/.96 Georgia, 'Times New Roman', serif;
   letter-spacing: -.055em;
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.432),
@@ -307,55 +289,47 @@ footer input {
   text-shadow: 0 2px 5px rgba(0, 0, 0, .95), 0 0 16px rgba(0, 0, 0, .9);
 }
 
-/* Side copy columns — hidden on small screens, visible on large */
+.hero-glow {
+  animation: glowBreath 6s ease-in-out infinite;
+}
+
+@keyframes glowBreath {
+  0%, 100% { opacity: .8; transform: translateX(-50%) scale(.96); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
+}
+
 .hero-copy {
-  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 285px;
+  width: min(220px, 23vw);
+  color: #e2dfd0;
+  font-size: 14px;
+  line-height: 1.48;
+  pointer-events: none;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .85);
 }
 
-.hero-copy-left,
+.hero-copy-left {
+  left: max(7vw, calc((100% - 1080px) / 2));
+  text-align: right;
+}
+
 .hero-copy-right {
-  display: none;
+  right: max(7vw, calc((100% - 1080px) / 2));
 }
 
-@media (min-width: 1024px) {
-  .hero-copy {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    transform: translateY(-50%);
-    width: min(200px, 16vw);
-    color: #e2dfd0;
-    font-size: 13px;
-    line-height: 1.48;
-    pointer-events: none;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, .85);
-  }
-
-  .hero-copy-left {
-    display: block;
-    left: max(5vw, calc((100% - 1080px) / 2));
-    text-align: right;
-    transform: translateY(-50%);
-  }
-
-  .hero-copy-right {
-    display: block;
-    right: max(5vw, calc((100% - 1080px) / 2));
-    transform: translateY(-50%);
-  }
-}
-
-/* CTA buttons — flow naturally below the h1 */
 .hero-actions {
-  position: relative;
+  position: absolute;
   z-index: 4;
+  top: 444px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: clamp(20px, 3vh, 36px);
-  width: 100%;
+  width: max-content;
   max-width: 94vw;
 }
 
@@ -580,17 +554,62 @@ footer input {
 
 @media (max-width: 700px) {
   .hero-section {
-    height: 100svh;
-    min-height: 560px;
-    padding: 76px 18px 32px;
+    aspect-ratio: auto;
+    min-height: 360px;
+    padding: 100px 14px 28px;
+  }
+
+  .hero-intro {
+    width: 100%;
+  }
+
+  .hero-brand {
+    max-width: 100%;
+    gap: 6px;
+    font-size: clamp(12px, 3.5vw, 14px);
+  }
+
+  .hero-brand svg {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 auto;
   }
 
   .hero-intro h1 {
-    font-size: clamp(28px, 8.8vw, 52px);
+    max-width: 100%;
+    font-size: clamp(25px, 7.1vw, 38px);
+    line-height: 1.03;
     white-space: normal;
   }
 
+  .hero-intro h1 span {
+    display: block;
+  }
+
+  .hero-intro p {
+    max-width: 34rem;
+    margin: 12px auto 0;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .hero-copy {
+    top: 515px;
+    width: 44%;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .hero-copy-left {
+    left: 4%;
+  }
+
+  .hero-copy-right {
+    right: 4%;
+  }
+
   .hero-actions {
+    top: 595px;
     gap: 7px;
   }
 
